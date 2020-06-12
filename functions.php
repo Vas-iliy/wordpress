@@ -12,6 +12,9 @@ function style_theme ()
 
 function script_theme ()
 {
+    wp_enqueue_style('min', get_template_directory_uri() . 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
+    wp_enqueue_style('migrate', get_template_directory_uri() . '/assets/js/jquery-migrate-1.2.1.min.js');
+    wp_enqueue_style('flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider.js');
     wp_enqueue_style('init', get_template_directory_uri() . '/assets/js/init.js');
     wp_enqueue_style('doubletaptogo', get_template_directory_uri() . '/assets/js/doubletaptogo.js');
 }
