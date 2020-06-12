@@ -42,8 +42,8 @@
 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
 
 <script src="js/jquery.flexslider.js"></script>
-<script src="js/doubletaptogo.js"></script>
-<script src="js/init.js"></script>
+
+<? wp_footer(); ?>
 
 </body>
 
