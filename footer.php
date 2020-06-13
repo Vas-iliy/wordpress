@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
 
     <div class="row">
 
@@ -35,11 +35,8 @@
 
 </footer> <!-- Footer End-->
 
-<!-- Java Script
-================================================== -->
-<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-
 <? wp_footer(); ?>
+
 </body>
 
 </html>
