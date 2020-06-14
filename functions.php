@@ -2,6 +2,20 @@
 add_action('wp_enqueue_scripts', 'style_theme');
 add_action('wp_footer', 'script_theme');
 add_action('after_setup_theme', 'myMenu');
+add_action('widgets_init', 'register_my_widgets');
+
+function register_my_widgets ()
+{
+    register_sidebar( array(
+        'name'          => 'Left Sidebar',
+        'id'            => "left_sidebar",
+        'description'   => 'Описание сайдбара',
+        'before_widget' => '<div class="widget %2$s">',
+        'after_widget'  => "</div>\n",
+        'before_title'  => '<h5 class="widgettitle">',
+        'after_title'   => "</h5>\n",
+    ) );
+}
 
 function myMenu ()
 {
