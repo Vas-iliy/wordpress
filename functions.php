@@ -4,7 +4,7 @@ add_action('wp_footer', 'script_theme');
 add_action('after_setup_theme', 'myMenu');
 add_action('widgets_init', 'register_my_widgets');
 
-function register_my_widgets ()
+function register_my_widgets () // виджет
 {
     register_sidebar( array(
         'name'          => 'Left Sidebar',
@@ -17,10 +17,36 @@ function register_my_widgets ()
     ) );
 }
 
-function myMenu ()
+function myMenu ()  // подключает меню
 {
     register_nav_menu('top', 'Меню в шапке');
     register_nav_menu('footer', 'Меню в подвале');
+    add_theme_support('title-tag'); //выводит title страницы автоматически
+    add_theme_support('post-thumbnails', array('post')); // минеатюру в post
+    add_image_size('anime', 1280, 720, true);
+
+    // удаляет H2 из шаблона пагинации
+    add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+    function my_navigation_template( $template, $class ){
+        /*
+        Вид базового шаблона:
+        <nav class="navigation %1$s" role="navigation">
+            <h2 class="screen-reader-text">%2$s</h2>
+            <div class="nav-links">%3$s</div>
+        </nav>
+        */
+
+        return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+    }
+
+// выводим пагинацию
+    the_posts_pagination( array(
+        'end_size' => 2,
+    ) );
 }
 
 function style_theme ()
