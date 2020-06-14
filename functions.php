@@ -12,7 +12,7 @@ function register_my_widgets ()
         'description'   => 'Описание сайдбара',
         'before_widget' => '<div class="widget %2$s">',
         'after_widget'  => "</div>\n",
-        'before_title'  => '<h5 class="widgettitle">',
+        'before_title'  => '<h2 class="widgettitle">',
         'after_title'   => "</h5>\n",
     ) );
 }
