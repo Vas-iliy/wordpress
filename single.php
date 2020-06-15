@@ -7,7 +7,7 @@
     <div class="row">
 
         <div class="ten columns centered text-center">
-            <h1>Category<span>.</span></h1>
+            <h1>Это страница одной статьи<span>.</span></h1>
 
             <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
                 enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
@@ -26,40 +26,35 @@
         <div id="primary" class="eight columns">
 
             <? if (have_posts()):?>
-                <? while (have_posts()): the_post();?>
-                <article>
-                    <article class="post">
-                        <div class="entry-header cf">
+                <?the_post();?>
+            <article class="post">
 
-                            <h1><a href="<? the_permalink(); ?>" title=""><?the_title();?></a></h1>
+                <div class="entry-header cf">
 
-                            <p class="post-meta">
+                    <h1><?the_title();?></h1>
 
-                                <time class="date" datetime="2014-01-14T11:24"><? the_time('F jS, Y'); ?></time>
-                                /
-                                <span class="categories">
-                                    <? the_tags('', ' / '); ?>
-                                </span>
+                    <p class="post-meta">
+                        <time class="date" datetime="2014-01-14T11:24"><? the_time('F jS, Y'); ?></time>
+                        /
+                        <span class="categories">
+                            <? the_tags('', ' / '); ?>
+                        </span>
+                    </p>
 
-                            </p>
+                </div>
 
+                <div class="post-thumb">
+	                <? the_post_thumbnail('anime'); ?>
+                </div>
 
-                        </div>
+                <div class="post-content">
 
-                        <div class="post-thumb">
-                            <a href="<? the_permalink(); ?>" title=""><? the_post_thumbnail('anime'); ?></a>
-                        </div>
+                    <p><? the_content(); ?> </p>
 
-                        <div class="post-content">
+                </div>
 
-                            <? the_excerpt(); ?>
+            </article> <!-- post end -->
 
-                        </div>
-
-                    </article>
-                </article>
-                <?endwhile;?>
-                <? the_posts_pagination(); ?>
             <?endif;?>
 
         </div> <!-- Primary End-->

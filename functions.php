@@ -1,8 +1,15 @@
 <?php
 add_action('wp_enqueue_scripts', 'style_theme');
-add_action('wp_footer', 'script_theme');
+add_action('wp_enqueue_scripts', 'script_theme');
 add_action('after_setup_theme', 'myMenu');
 add_action('widgets_init', 'register_my_widgets');
+
+add_filter( 'document_title_separator', 'filter_function_name_4326' );
+function filter_function_name_4326( $sep ){
+	$sep = ' | ';
+
+	return $sep;
+}
 
 function register_my_widgets () // виджет
 {
@@ -24,6 +31,7 @@ function myMenu ()  // подключает меню
     add_theme_support('title-tag'); //выводит title страницы автоматически
     add_theme_support('post-thumbnails', array('post')); // минеатюру в post
     add_image_size('anime', 1280, 720, true);
+
 
     // удаляет H2 из шаблона пагинации
     add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
@@ -48,6 +56,7 @@ function myMenu ()  // подключает меню
         'end_size' => 2,
     ) );
 }
+
 
 function style_theme ()
 {
