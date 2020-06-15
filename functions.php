@@ -39,7 +39,7 @@ function myMenu ()  // подключает меню
     register_nav_menu('footer', 'Меню в подвале');
     add_theme_support('title-tag'); //выводит title страницы автоматически
     add_theme_support('post-thumbnails', array('post')); // минеатюру в post
-    add_theme_support('post-formats', array('aside', 'video'));
+    add_theme_support('post-formats', array('aside', 'video'));//шаблон поста для разных типов
     add_image_size('anime', 1280, 720, true);
 
 
