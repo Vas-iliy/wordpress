@@ -3,6 +3,31 @@ add_action('wp_enqueue_scripts', 'style_theme');
 add_action('wp_enqueue_scripts', 'script_theme');
 add_action('after_setup_theme', 'myMenu');
 add_action('widgets_init', 'register_my_widgets');
+//это задание, которое я провалил
+/*
+Этот action должен вывести на экран ссылки на 3 последние статьи (поста)
+Подсказка: вы уже знаете как выводить статьи при помощи функции get_posts(),
+вам остается только завернуть эту функцию в экшн и прописать ее в файле functions.php
+ */
+/*add_action('myAction', 'selection');
+
+function selection ()
+{
+	global $post;
+
+// записываем $post во временную переменную $tmp_post
+	$tmp_post = $post;
+	$args = array( 'posts_per_page' => 1, 'post_type'   => 'post');
+	$myposts = get_posts( $args );
+	foreach( $myposts as $post ){
+		setup_postdata($post);
+
+		echo the_title();
+
+	}
+	$post = $tmp_post;
+
+}*/
 
 
 add_filter( 'document_title_separator', 'filter_function_name_4326' );

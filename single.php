@@ -13,8 +13,6 @@
 
         <div id="secondary" class="four columns end">
 
-        <? get_sidebar(); ?>
-
         </div> <!-- Secondary End-->
 
     </div>
