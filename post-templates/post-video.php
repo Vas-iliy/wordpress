@@ -5,14 +5,6 @@
 
 		<h1><?the_title();?></h1>
 
-		<p class="post-meta">
-			<time class="date" datetime="2014-01-14T11:24"><? the_time('F jS, Y'); ?></time>
-			/
-			<span class="categories">
-                            <? the_tags('', ' / '); ?>
-			</span>
-		</p>
-
 	</div>
 
 	<div class="post-thumb">

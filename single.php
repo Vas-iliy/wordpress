@@ -1,6 +1,5 @@
 <? get_header();?>
 
-<?=get_post_format() ?>
 <?the_post();?>
 <!-- Content
 ================================================== -->
@@ -9,7 +8,7 @@
     <div id="page-content" class="row">
 
         <div id="primary" class="eight columns">
-
+            <? get_template_part('post-templates/post', get_post_format()); ?>
         </div> <!-- Primary End-->
 
         <div id="secondary" class="four columns end">
