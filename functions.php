@@ -11,6 +11,15 @@ function filter_function_name_4326( $sep ){
 	return $sep;
 }
 
+
+add_filter( 'the_content', 'content' );
+function content( $content ) {
+	$content .= 'Тут был я';
+
+	return $content;
+}
+
+
 function register_my_widgets () // виджет
 {
     register_sidebar( array(
@@ -30,6 +39,7 @@ function myMenu ()  // подключает меню
     register_nav_menu('footer', 'Меню в подвале');
     add_theme_support('title-tag'); //выводит title страницы автоматически
     add_theme_support('post-thumbnails', array('post')); // минеатюру в post
+    add_theme_support('post-formats', array('aside', 'video'));
     add_image_size('anime', 1280, 720, true);
 
 
@@ -79,3 +89,17 @@ function script_theme ()
     wp_enqueue_script('doubletaptogo', get_template_directory_uri() . '/assets/js/doubletaptogo.js', ['jquery'],
         null, true);
 }
+
+
+function Generate_iframe( $atts ) {
+	$atts = shortcode_atts( array(
+		'href'   => 'http://example.com',
+		'height' => '550px',
+		'width'  => '600px',
+	), $atts );
+
+	return '<iframe src="'. $atts['href'] .'" width="'. $atts['width'] .'" height="'. $atts['height'] .'"> 
+		<p>Ваш новый шорткод</p></iframe>';
+}
+add_shortcode('iframe', 'Generate_iframe');
+// использование: [iframe href="http://www.exmaple.com" height="480" width="640"]
