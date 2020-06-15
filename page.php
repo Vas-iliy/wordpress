@@ -151,7 +151,7 @@
 
         <div id="secondary" class="four columns end">
 
-        <? get_sidebar(); ?>
+        <? get_sidebar('no'); ?>
 
         </div> <!-- Secondary End-->
 

@@ -4,6 +4,7 @@ add_action('wp_enqueue_scripts', 'script_theme');
 add_action('after_setup_theme', 'myMenu');
 add_action('widgets_init', 'register_my_widgets');
 
+
 add_filter( 'document_title_separator', 'filter_function_name_4326' );
 function filter_function_name_4326( $sep ){
 	$sep = ' | ';
@@ -31,6 +32,16 @@ function register_my_widgets () // виджет
         'before_title'  => '<h2 class="widgettitle">',
         'after_title'   => "</h5>\n",
     ) );
+
+	register_sidebar( array(
+		'name'          => 'sidebar',
+		'id'            => "sidebar",
+		'description'   => 'Описание сайдбара',
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => "</div>\n",
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h5>\n",
+	) );
 }
 
 function myMenu ()  // подключает меню
