@@ -1,14 +1,5 @@
-<?php
-/*
- * Template Name: Страница с работой портфолио
- * Template Post Type: portfolio
- */
-?>
-
 <? get_header(); ?>
 
-<!-- Content
-================================================== -->
 <div class="content-outer">
 
 	<div id="page-content" class="row portfolio">

@@ -43,16 +43,7 @@
 
 			<div id="primary" class="eight columns portfolio-list">
 				<div id="portfolio-wrapper" class="bgrid-halves cf">
-					<?// параметры по умолчанию
-					$args = array(
-						'numberposts' => 3,
-						'post_type'   => 'portfolio',
-						'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-					);
-
-					$posts = get_posts($args);
-					foreach( $posts as $post ): setup_postdata($post);?>
-
+					<? if (have_posts()): while (have_posts()): the_post(); ?>
 						<div class="columns portfolio-item">
 							<div class="item-wrap">
 								<a href="<? the_permalink(); ?>">
@@ -66,10 +57,7 @@
 								</div>
 							</div>
 						</div>
-
-					<?endforeach;
-					wp_reset_postdata(); // сброс
-					?>
+					<?endwhile; endif;?>
 				</div>
 
 			</div> <!-- primary end-->

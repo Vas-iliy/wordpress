@@ -51,14 +51,13 @@ function my_custom_init(){
 		'description' => 'Это наши работы в портфолио',
 		'public'             => true,
 		'publicly_queryable' => true,
-		'exclude_from_search'=> true,
+		'exclude_from_search'=> false,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'show_in_admin_bar'  => true,
 		'show_in_nav_menus'  => true,
 		'query_var'          => true,
 		'rewrite'            => true,
-		//'capability_type'    => 'post',
 		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => 4,
@@ -72,7 +71,7 @@ function my_custom_init(){
 add_action( 'init', 'create_taxonomy' );
 function create_taxonomy(){
 
-	register_taxonomy( 'skills', [ 'portfolio' ], [
+	register_taxonomy( 'skills', [ 'portfolio', 'post' ], [
 		'label'                 => '', // определяется параметром $labels->name
 		'labels'                => [
 			'name'              => 'Навыки',
@@ -90,24 +89,36 @@ function create_taxonomy(){
 		],
 		'description'           => 'Навыки, используемые в работе', // описание таксономии
 		'public'                => true,
-		// 'publicly_queryable'    => null, // равен аргументу public
-		// 'show_in_nav_menus'     => true, // равен аргументу public
-		// 'show_ui'               => true, // равен аргументу public
-		// 'show_in_menu'          => true, // равен аргументу show_ui
-		// 'show_tagcloud'         => true, // равен аргументу show_ui
-		// 'show_in_quick_edit'    => null, // равен аргументу show_ui
+		'publicly_queryable'    => null, // равен аргументу public
 		'hierarchical'          => false,
-
 		'rewrite'               => true,
-		//'query_var'             => $taxonomy, // название параметра запроса
-		'capabilities'          => array(),
-		'meta_box_cb'           => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
-		'show_admin_column'     => false, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
-		'show_in_rest'          => null, // добавить в REST API
-		'rest_base'             => null, // $taxonomy
+		'show_in_rest'          => true
+	] );
+
+	register_taxonomy( 'pidor', ['portfolio' ], [
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => 'pidor',
+			'singular_name'     => 'pidor',
+			'search_items'      => 'Найти pidor',
+			'all_items'         => 'Все pidor',
+			'view_item '        => 'Смотреть pidor',
+			'parent_item'       => 'Родительский pidor',
+			'parent_item_colon' => 'Родительский pidor:',
+			'edit_item'         => 'Изменить pidor',
+			'update_item'       => 'Обновить pidor',
+			'add_new_item'      => 'Добавить новый pidor',
+			'new_item_name'     => 'Новое имя pidor',
+			'menu_name'         => 'pidor',
+		],
+		'description'           => 'pidor, используемые в работе', // описание таксономии
+		'public'                => true,
+		'publicly_queryable'    => null, // равен аргументу public
+		'hierarchical'          => false,
+		'rewrite'               => true,
+
 	] );
 }
-
 
 add_filter( 'document_title_separator', 'filter_function_name_4326' );
 function filter_function_name_4326( $sep ){
