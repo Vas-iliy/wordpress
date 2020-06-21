@@ -6,69 +6,40 @@
 ?>
 
 <? get_header(); ?>
-<!-- Page Title
-================================================== -->
-<div id="page-title">
-
-	<div class="row">
-
-		<div class="ten columns centered text-center">
-			<h1>Our Amazing Works<span>.</span></h1>
-
-			<p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
-				enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
-		</div>
-
-	</div>
-
-</div> <!-- Page Title End-->
 
 <!-- Content
 ================================================== -->
 <div class="content-outer">
 
 	<div id="page-content" class="row portfolio">
-
+		<? if (have_posts()): while (have_posts()): the_post();?>
 		<section class="entry cf">
 
 			<div id="secondary"  class="four columns entry-details">
 
-				<h1>Geometrics.</h1>
+				<h1><? the_title(); ?></h1>
 
 				<div class="entry-description">
 
-					<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-						nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-						cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
-						ornare odio.</p>
+					<p>By <? the_author();  ?></p>
 
 				</div>
 
-				<ul class="portfolio-meta-list">
-					<li><span>Date: </span>January 2014</li>
-					<li><span>Client </span>Styleshout</li>
-					<li><span>Skills: </span>Photoshop, Photography, Branding</li>
-				</ul>
+				<time class="date" datetime="2014-01-14T11:24"><? the_time('F jS, Y'); ?></time>
 
-				<a class="button" href="http://behance.net">View project</a>
 
 			</div> <!-- secondary End-->
 
 			<div id="primary" class="eight columns">
 
 				<div class="entry-media">
-
-					<img src="images/portfolio/entries/geometric-backgrounds-01.jpg" alt="" />
-
-					<img src="images/portfolio/entries/geometric-backgrounds-02.jpg" alt="" />
+					<? the_post_thumbnail(); ?>
 
 				</div>
 
 				<div class="entry-excerpt">
 
-					<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-						nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-						cursus a sit amet mauris. Morbi accumsan ipsum velit. </p>
+					<p><? the_content(); ?></p>
 
 				</div>
 
@@ -104,16 +75,6 @@
                </span>
 				<b><a href="#">2 Days Ago</a></b>
 			</li>
-			<!--
-			<li>
-			   <span>
-			   This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-			   Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-			   <a href="#">http://t.co/CGIrdxIlI3</a>
-			   </span>
-			   <b><a href="#">3 Days Ago</a></b>
-			</li>
-			-->
 		</ul>
 
 		<p class="align-center"><a href="#" class="button">Follow us</a></p>
@@ -121,5 +82,6 @@
 	</div>
 
 </section> <!-- Tweet Section End-->
+<?endwhile; endif;?>
 
 <? get_footer(); ?>
