@@ -22,10 +22,13 @@
 				<div class="entry-description">
 
 					<p>By <? the_author();  ?></p>
+					<ul class="portfolio-meta-list">
+						<li><span>Date: </span><? the_field('progect_date'); ?></li>
+						<li><span>Client </span><? the_field('client'); ?></li>
+						<p><? the_field('text'); ?></p>
+					</ul>
 
 				</div>
-
-				<time class="date" datetime="2014-01-14T11:24"><? the_time('F jS, Y'); ?></time>
 
 
 			</div> <!-- secondary End-->
