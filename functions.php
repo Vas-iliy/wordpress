@@ -51,16 +51,20 @@ function my_custom_init(){
 		'description' => 'Это наши работы в портфолио',
 		'public'             => true,
 		'publicly_queryable' => true,
+		'exclude_from_search'=> true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_admin_bar'  => true,
+		'show_in_nav_menus'  => true,
 		'query_var'          => true,
 		'rewrite'            => true,
-		'capability_type'    => 'post',
-		'has_archive'        => true,
+		//'capability_type'    => 'post',
+		'has_archive'        => false,
 		'hierarchical'       => false,
 		'menu_position'      => 4,
 		'menu_icon'          => 'dashicons-format-image',
-		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+		'supports'           => array('title','editor','author','thumbnail','excerpt'),
+		'taxonomies'         => array()
 	) );
 }
 

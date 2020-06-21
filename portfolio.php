@@ -55,7 +55,7 @@
 
 					<div class="columns portfolio-item">
 						<div class="item-wrap">
-							<a href="<? the_permalink(); ?>l">
+							<a href="<? the_permalink(); ?>">
 								<? the_post_thumbnail(); ?>
 								<div class="overlay"></div>
 								<div class="link-icon"><i class="fa fa-link"></i></div>
