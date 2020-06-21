@@ -94,31 +94,9 @@ function create_taxonomy(){
 		'rewrite'               => true,
 		'show_in_rest'          => true
 	] );
-
-	register_taxonomy( 'pidor', ['portfolio' ], [
-		'label'                 => '', // определяется параметром $labels->name
-		'labels'                => [
-			'name'              => 'pidor',
-			'singular_name'     => 'pidor',
-			'search_items'      => 'Найти pidor',
-			'all_items'         => 'Все pidor',
-			'view_item '        => 'Смотреть pidor',
-			'parent_item'       => 'Родительский pidor',
-			'parent_item_colon' => 'Родительский pidor:',
-			'edit_item'         => 'Изменить pidor',
-			'update_item'       => 'Обновить pidor',
-			'add_new_item'      => 'Добавить новый pidor',
-			'new_item_name'     => 'Новое имя pidor',
-			'menu_name'         => 'pidor',
-		],
-		'description'           => 'pidor, используемые в работе', // описание таксономии
-		'public'                => true,
-		'publicly_queryable'    => null, // равен аргументу public
-		'hierarchical'          => false,
-		'rewrite'               => true,
-
-	] );
 }
+
+
 
 add_filter( 'document_title_separator', 'filter_function_name_4326' );
 function filter_function_name_4326( $sep ){

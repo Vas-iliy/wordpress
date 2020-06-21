@@ -53,6 +53,7 @@
 		</ul>
 
 	</div>
+	<?endwhile; endif;?>
 
 </div> <!-- content End-->
 
@@ -82,6 +83,6 @@
 	</div>
 
 </section> <!-- Tweet Section End-->
-<?endwhile; endif;?>
+
 
 <? get_footer(); ?>
