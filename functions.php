@@ -59,6 +59,7 @@ function my_custom_init(){
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => 4,
+		'menu_icon'          => 'dashicons-format-image',
 		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
 	) );
 }

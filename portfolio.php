@@ -42,6 +42,7 @@
 			</div> <!-- Secondary End-->
 
 			<div id="primary" class="eight columns portfolio-list">
+				<div id="portfolio-wrapper" class="bgrid-halves cf">
 				<?// параметры по умолчанию
 				$args = array(
 					'numberposts' => 3,
@@ -51,23 +52,25 @@
 
 				$posts = get_posts($args);
 				foreach( $posts as $post ): setup_postdata($post);?>
-				<div id="portfolio-wrapper" class="bgrid-halves cf">
-					<div class="columns portfolio-item first">
+
+					<div class="columns portfolio-item">
 						<div class="item-wrap">
-							<a href="portfolio.html">
-								<img alt="" src="images/portfolio/geometrics.jpg">
+							<a href="<? the_permalink(); ?>l">
+								<? the_post_thumbnail(); ?>
 								<div class="overlay"></div>
 								<div class="link-icon"><i class="fa fa-link"></i></div>
 							</a>
 							<div class="portfolio-item-meta">
-								<h5><a href="portfolio.html">Geometrics</a></h5>
-								<p>Illustrration</p>
+								<h5><a href="<? the_permalink(); ?>"><? the_title() ?></a></h5>
+								<p><? the_excerpt(); ?></p>
 							</div>
 						</div>
 					</div>
-				</div>
-				<?endforeach;?>
+
+				<?endforeach;
 				wp_reset_postdata(); // сброс
+				?>
+				</div>
 
 			</div> <!-- primary end-->
 
