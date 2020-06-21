@@ -37,6 +37,7 @@
 
 				<div class="entry-media">
 					<? the_post_thumbnail(); ?>
+					<img src="<? the_field('image');?>" alt="">
 
 				</div>
 
