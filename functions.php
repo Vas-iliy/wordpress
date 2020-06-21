@@ -106,6 +106,16 @@ function register_my_widgets () // виджет
 		'before_title'  => '<h2 class="widgettitle">',
 		'after_title'   => "</h5>\n",
 	) );
+
+	register_sidebar( array(
+		'name'          => 'contacts',
+		'id'            => "contacts",
+		'description'   => 'Описание сайдбара',
+		'before_widget' => '<div class="widget %2$s">',
+		'after_widget'  => "</div>\n",
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h5>\n",
+	) );
 }
 
 function myMenu ()  // подключает меню
