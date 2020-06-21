@@ -5,6 +5,8 @@
 
 		<h1><?the_title();?></h1>
 
+		<? the_field('video') ?>
+
 	</div>
 
 	<div class="post-thumb">

@@ -3,6 +3,8 @@
 
 	<div class="entry-header cf">
 
+        <? the_field('aside') ?>
+
 		<h1><?the_title();?></h1>
 
 	</div>
