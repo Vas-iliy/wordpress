@@ -29,6 +29,40 @@ function selection ()
 
 }*/
 
+add_action('init', 'my_custom_init');
+function my_custom_init(){
+	register_post_type('portfolio', array(
+		'label' => null,
+		'labels'             => array(
+			'name'               => 'Портфолио', // Основное название типа записи
+			'singular_name'      => 'Портфолио', // отдельное название записи
+			'add_new'            => 'Добавить работу',
+			'add_new_item'       => 'Добавить новую работу',
+			'edit_item'          => 'Редактировать работу',
+			'new_item'           => 'Новая работа',
+			'view_item'          => 'Посмотреть работу',
+			'search_items'       => 'Найти работу',
+			'not_found'          =>  'Работ не найдено',
+			'not_found_in_trash' => 'В корзине работ не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Портфолио'
+
+		),
+		'description' => 'Это наши работы в портфолио',
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => true,
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 4,
+		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+	) );
+}
+
 
 add_filter( 'document_title_separator', 'filter_function_name_4326' );
 function filter_function_name_4326( $sep ){
@@ -74,7 +108,7 @@ function myMenu ()  // подключает меню
     register_nav_menu('top', 'Меню в шапке');
     register_nav_menu('footer', 'Меню в подвале');
     add_theme_support('title-tag'); //выводит title страницы автоматически
-    add_theme_support('post-thumbnails', array('post')); // минеатюру в post
+    add_theme_support('post-thumbnails', array('post', 'portfolio')); // минеатюру в post
     add_theme_support('post-formats', array('aside', 'video'));//шаблон поста для разных типов
     add_image_size('anime', 1280, 720, true);
 
