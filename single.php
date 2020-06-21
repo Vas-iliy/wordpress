@@ -57,16 +57,4 @@
 </section> <!-- Tweets Section End-->
 <?endwhile; endif;?>
 
-<?// параметры по умолчанию
-$args = array(
-	'numberposts' => 3,
-	'post_type'   => 'portfolio',
-	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
-);
-
-$posts = get_posts($args);
-foreach( $posts as $post ): setup_postdata($post);?>
-<div><? the_title(); ?></div>
-<?endforeach;?>
-
 <? get_footer(); ?>
