@@ -1,6 +1,6 @@
 <? get_header();?>
 <!--тут выводятся посты-->
-<? if (have_posts()): while (have_posts()): the_post();?>
+<? while (have_posts()): the_post();?>
 <!-- Content
 ================================================== -->
 
@@ -46,6 +46,6 @@
     </div>
 
 </section> <!-- Tweets Section End-->
-<?endwhile; endif;?>
+<?endwhile;?>
 
 <? get_footer(); ?>

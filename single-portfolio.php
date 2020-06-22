@@ -14,8 +14,11 @@
 
 					<p>By <? the_author();  ?></p>
 					<ul class="portfolio-meta-list">
-						<li><span>Date: </span><? the_field('progect_date'); ?></li>
-						<li><span>Client </span><? the_field('client'); ?></li>
+						<? if(get_field('progect_date')): ?>
+                            <li><span>Date: </span><? the_field('progect_date'); ?></li>
+						<?endif; if(get_field('client')):?>
+                            <li><span>Client </span><? the_field('client'); ?></li>
+						<?endif;?>
 						<li>
                             <span>Skills </span>
 							<?php the_terms( get_the_ID(), 'skills', '', ' / ', '' ); ?>
