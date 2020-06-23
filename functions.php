@@ -149,8 +149,10 @@ function register_my_widgets () // виджет
 
 function myMenu ()  // подключает меню
 {
-    register_nav_menu('top', 'Меню в шапке');
-    register_nav_menu('footer', 'Меню в подвале');
+    register_nav_menus([
+    	'top' => 'Меню в шапке',
+	    'footer' => 'Меню в подвале'
+    ]);
     add_theme_support('title-tag'); //выводит title страницы автоматически
     add_theme_support('post-thumbnails', array('post', 'portfolio')); // минеатюру в post
     add_theme_support('post-formats', array('aside', 'video'));//шаблон поста для разных типов

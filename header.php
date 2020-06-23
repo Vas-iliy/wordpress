@@ -14,14 +14,6 @@
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-
-    <!-- Favicons
-     ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" >
-
     <? wp_head(); ?>
 
 </head>
